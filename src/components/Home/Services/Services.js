@@ -1,0 +1,39 @@
+import React from 'react';
+import { Container, Row } from 'react-bootstrap';
+import ServicesDetail from '../ServicesDetail/ServicesDetail';
+import './Services.css';
+
+const servicesData = [
+    {
+        name: 'Fluoride Treatment',
+        description:
+            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates recusandae, suscipit accusantium ut atque autem!',
+    },
+    {
+        name: 'Cavity Filling',
+        description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur illum odio nam! Esse, quia repellat',
+    },
+    {
+        name: 'Teeth Whitening',
+        description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rerum laboriosam rem commodi reiciendis voluptate!',
+    },
+];
+
+const Services = () => (
+    <section className="service">
+        <h1 className="text-center mt-5">OUR SERVICES</h1>
+        <div className="d-flex justify-content-center">
+            <Container>
+                <Row className="mt-5">
+                    {servicesData.map((services) => (
+                        <ServicesDetail services={services} key={services.name} />
+                    ))}
+                </Row>
+            </Container>
+        </div>
+    </section>
+);
+
+export default Services;
