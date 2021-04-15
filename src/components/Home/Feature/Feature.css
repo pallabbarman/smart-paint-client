@@ -1,0 +1,11 @@
+.items-features {
+    padding: 5px 20px !important;
+    width: 35rem;
+    margin: 0 30px;
+    background-color: #fff;
+    box-shadow: none !important;
+}
+.items-features img {
+    object-fit: contain;
+    height: 200px;
+}
