@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Jumbotron, Row } from 'react-bootstrap';
 import quality from '../../../images/gold-medal.svg';
-import greeneries from '../../../images/guarantee.svg';
+import guaranties from '../../../images/guarantee.svg';
 import experience from '../../../images/idea.svg';
 import skill from '../../../images/tools.svg';
 import Feature from '../Feature/Feature';
@@ -26,8 +26,8 @@ const featureItems = [
             ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, aperiam?',
     },
     {
-        img: greeneries,
-        name: 'Greeneries',
+        img: guaranties,
+        name: 'Guaranties',
         description:
             ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, aperiam?',
     },
