@@ -1,0 +1,13 @@
+.nav {
+    background-color: #5a00dd;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav-item {
+    font-weight: 400;
+    font-size: 18px;
+    gap: 7px;
+}
+.nav-item a:hover {
+    background-color: mediumblue;
+}

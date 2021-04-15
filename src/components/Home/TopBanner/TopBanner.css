@@ -1,0 +1,20 @@
+.top-banner {
+    background-color: #5a00dd;
+    color: white;
+}
+.banner {
+    height: 600px;
+}
+.banner h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+.banner h4 {
+    color: yellow;
+}
+.color {
+    color: white;
+}
+#line-color {
+    color: cyan;
+}
