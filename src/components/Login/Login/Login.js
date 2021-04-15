@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import google from '../../../images/google.svg';
 import login from '../../../images/login.svg';
+import Footer from '../../Shared/Footer/Footer';
 import NavBar from '../../Shared/NavBar/NavBar';
 import { handleGoogleSignIn, handleSignOut, initializeLoginFramework } from './LoginManager';
 
@@ -75,6 +76,7 @@ const Login = () => {
                     </Col>
                 </Row>
             </Container>
+            <Footer />
         </section>
     );
 };

@@ -38,7 +38,7 @@ const Features = () => (
         <Jumbotron>
             <Container>
                 <div className="text-center">
-                    <h1>Why Choose Us</h1>
+                    <h1>WHY CHOOSE US</h1>
                     <br />
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam ullam

@@ -1,0 +1,11 @@
+.footer {
+    background-color: #5a00dd;
+    color: white;
+}
+.footer-main {
+    height: 400px;
+}
+.footer-main img {
+    height: 100px;
+    width: 100px;
+}

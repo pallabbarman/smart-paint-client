@@ -1,5 +1,7 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import NavBar from '../../Shared/NavBar/NavBar';
+import Contact from '../Contact/Contact';
 import FeaturedService from '../FeaturedService/FeaturedService';
 import Features from '../Features/Features';
 import Services from '../Services/Services';
@@ -14,6 +16,8 @@ const Home = () => (
         <FeaturedService />
         <Testimonials />
         <Features />
+        <Contact />
+        <Footer />
     </div>
 );
 
