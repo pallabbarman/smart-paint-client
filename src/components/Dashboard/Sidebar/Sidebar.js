@@ -31,7 +31,7 @@ const Sidebar = () => (
         <Link to="/addService">
             <FontAwesomeIcon icon={faPlus} /> Add Service
         </Link>
-        <Link to="/admin">
+        <Link to="/addAdmin">
             <FontAwesomeIcon icon={faUserShield} /> Make Admin
         </Link>
         <Link to="/manageServices">
