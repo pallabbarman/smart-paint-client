@@ -5,12 +5,14 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
+import PaymentForm from '../Payment/PaymentForm';
 
 require('dotenv').config();
 
 const Book = () => {
     const { _id } = useParams();
     const [booking, setBooking] = useState([]);
+    const [order, setOrder] = useState(null);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     console.log(setLoggedInUser);
 
@@ -28,9 +30,16 @@ const Book = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = async () => {
+    const onSubmit = (data) => {
+        setOrder(data);
+        console.log(data);
+    };
+
+    const handlePaymentSuccess = (paymentId) => {
         const servicesDetails = {
             ...loggedInUser,
+            order,
+            paymentId,
             title: addBooking?.title,
             image: addBooking?.imageURL,
             description: addBooking?.service,
@@ -55,7 +64,7 @@ const Book = () => {
                     <Col md={2} className="p-0">
                         <Sidebar />
                     </Col>
-                    <Col md={10} style={{ marginTop: '50px' }}>
+                    <Col md={10} style={{ marginTop: '50px', display: order ? 'none' : 'block' }}>
                         <h1 className="text-center">Booking</h1>
                         <form
                             onSubmit={handleSubmit(onSubmit)}
@@ -89,15 +98,19 @@ const Book = () => {
                                 <input
                                     type="text"
                                     defaultValue={addBooking?.title}
-                                    {...register('service')}
+                                    {...register('title')}
                                     placeholder="Title"
                                     className="form-control"
                                 />
                             </div>
                             <Button variant="outline-primary" className="px-5" type="submit">
-                                Pay
+                                Submit
                             </Button>
                         </form>
+                    </Col>
+                    <Col md={10} style={{ marginTop: '50px', display: order ? 'block' : 'none' }}>
+                        <h1 className="text-center">Pay Now</h1>
+                        <PaymentForm handlePayment={handlePaymentSuccess} />
                     </Col>
                 </Row>
             </Container>
