@@ -3,7 +3,7 @@ import {
     faCommentAlt,
     faList,
     faPlus,
-    faShoppingCart,
+    // faShoppingCart,
     faTasks,
     faUserShield,
 } from '@fortawesome/free-solid-svg-icons';
@@ -16,9 +16,9 @@ const Sidebar = () => (
     <div className="sidebar">
         <h3 className="text-center">Smart Paint</h3>
         <br />
-        <Link to="/book">
+        {/* <Link to="/book">
             <FontAwesomeIcon icon={faShoppingCart} /> Book
-        </Link>
+        </Link> */}
         <Link to="/serviceList">
             <FontAwesomeIcon icon={faTasks} /> Service List
         </Link>

@@ -1,9 +1,12 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
+
+require('dotenv').config();
 
 const Book = () => {
     const { _id } = useParams();
@@ -24,7 +27,27 @@ const Book = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = async () => {
+        const servicesDetails = {
+            ...loggedInUser,
+            title: addBooking?.title,
+            image: addBooking?.imageURL,
+            description: addBooking?.service,
+            date: new Date(),
+        };
+
+        fetch('http://localhost:5000/addServicesOrder', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(servicesDetails),
+        })
+            .then((res) => res.json())
+            .then(() => {
+                alert('Your order placed successfully');
+            });
+    };
+
     return (
         <section>
             <Container fluid>
@@ -55,7 +78,7 @@ const Book = () => {
                                     type="email"
                                     defaultValue={loggedInUser.email}
                                     {...register('email', { required: true })}
-                                    placeholder="Your Name"
+                                    placeholder="Your Email"
                                     className="form-control"
                                 />
                                 {errors.email && (
@@ -66,13 +89,10 @@ const Book = () => {
                                 <input
                                     type="text"
                                     defaultValue={addBooking?.title}
-                                    {...register('service', { required: true })}
-                                    placeholder="Your Name"
+                                    {...register('service')}
+                                    placeholder="Title"
                                     className="form-control"
                                 />
-                                {errors.service && (
-                                    <span className="text-danger">This field is required</span>
-                                )}
                             </div>
                             <Button variant="outline-primary" className="px-5" type="submit">
                                 Pay
