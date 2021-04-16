@@ -9,7 +9,24 @@ const AddAdmin = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = (data) => {
+        const adminData = {
+            email: data.email,
+        };
+
+        fetch('http://localhost:5000/addAAdmin', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(adminData),
+        }).then((res) => {
+            console.log(res);
+            alert('New Admin Added');
+        });
+    };
+
     return (
         <section>
             <Container fluid>

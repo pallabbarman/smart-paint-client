@@ -7,8 +7,6 @@ import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import PaymentForm from '../Payment/PaymentForm';
 
-require('dotenv').config();
-
 const Book = () => {
     const { _id } = useParams();
     const [booking, setBooking] = useState([]);
@@ -117,4 +115,5 @@ const Book = () => {
         </section>
     );
 };
+
 export default Book;

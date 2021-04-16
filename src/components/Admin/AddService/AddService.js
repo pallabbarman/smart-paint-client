@@ -40,7 +40,6 @@ const AddService = () => {
 
         const url = `http://localhost:5000/addService`;
 
-        console.log(serviceData);
         fetch(url, {
             method: 'POST',
             headers: {
