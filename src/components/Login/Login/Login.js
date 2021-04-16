@@ -12,6 +12,8 @@ const Login = () => {
     const [user, setUser] = useState({
         isSignIn: false,
         name: '',
+        email: '',
+        photo: '',
     });
 
     initializeLoginFramework();

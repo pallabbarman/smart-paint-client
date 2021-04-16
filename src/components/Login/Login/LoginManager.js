@@ -14,12 +14,13 @@ export const handleGoogleSignIn = () => {
         .auth()
         .signInWithPopup(googleProvider)
         .then((res) => {
-            const { displayName, email } = res.user;
+            const { displayName, email, photoURL } = res.user;
             const signInUser = {
                 isSignIn: true,
                 name: displayName,
                 email,
                 success: true,
+                photo: photoURL,
             };
             return signInUser;
         })
@@ -38,6 +39,7 @@ export const handleSignOut = () =>
                 name: '',
                 email: '',
                 error: '',
+                photo: '',
                 success: false,
             };
             return signOutUser;

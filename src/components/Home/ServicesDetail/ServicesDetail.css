@@ -5,6 +5,7 @@
     width: 18rem;
     height: 25rem;
     margin: 20px 0;
+    text-decoration: none !important;
 }
 .services-info img {
     border-radius: 10px;

@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
 const Book = () => {
+    const { _id } = useParams();
+    const [booking, setBooking] = useState([]);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(setLoggedInUser);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/service/${_id}`)
+            .then((res) => res.json())
+            .then((data) => setBooking(data));
+    }, [_id]);
+
+    const addBooking = booking.find((bk) => parseInt(bk._id, 10) === parseInt(_id, 10));
+
     const {
         register,
         handleSubmit,
@@ -26,6 +41,7 @@ const Book = () => {
                             <div className="form-group">
                                 <input
                                     type="text"
+                                    defaultValue={loggedInUser.name}
                                     {...register('name', { required: true })}
                                     placeholder="Your Name"
                                     className="form-control"
@@ -37,6 +53,7 @@ const Book = () => {
                             <div className="form-group">
                                 <input
                                     type="email"
+                                    defaultValue={loggedInUser.email}
                                     {...register('email', { required: true })}
                                     placeholder="Your Name"
                                     className="form-control"
@@ -48,6 +65,7 @@ const Book = () => {
                             <div className="form-group">
                                 <input
                                     type="text"
+                                    defaultValue={addBooking?.title}
                                     {...register('service', { required: true })}
                                     placeholder="Your Name"
                                     className="form-control"
