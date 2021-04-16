@@ -1,39 +1,33 @@
-import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import ServicesDetail from '../ServicesDetail/ServicesDetail';
 import './Services.css';
 
-const servicesData = [
-    {
-        name: 'Fluoride Treatment',
-        description:
-            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates recusandae, suscipit accusantium ut atque autem!',
-    },
-    {
-        name: 'Cavity Filling',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur illum odio nam! Esse, quia repellat',
-    },
-    {
-        name: 'Teeth Whitening',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rerum laboriosam rem commodi reiciendis voluptate!',
-    },
-];
+const Services = () => {
+    const [servicesData, setServicesData] = useState([]);
 
-const Services = () => (
-    <section className="service">
-        <h1 className="text-center mt-5">OUR SERVICES</h1>
-        <div className="d-flex justify-content-center">
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+            .then((res) => res.json())
+            .then((data) => setServicesData(data))
+            .catch((err) => console.log(err));
+    }, []);
+
+    return (
+        <section className="service">
+            <h1 className="text-center mt-5">OUR SERVICES</h1>
             <Container>
-                <Row className="mt-5">
+                <div className="text-center mt-5" style={{ fontSize: '30px' }}>
+                    {servicesData.length === 0 && <Spinner animation="grow" variant="primary" />}
+                </div>
+                <Row>
                     {servicesData.map((services) => (
-                        <ServicesDetail services={services} key={services.name} />
+                        <ServicesDetail services={services} key={services._id} />
                     ))}
+                    <br />
                 </Row>
             </Container>
-        </div>
-    </section>
-);
-
+        </section>
+    );
+};
 export default Services;

@@ -1,7 +1,12 @@
-.card {
+.services-info {
     border-radius: 10px;
     box-shadow: 2px 2px 5px gray;
     color: #000;
-    margin: 5px;
-    padding: 5px;
+    width: 18rem;
+    height: 25rem;
+    margin: 20px 0;
+}
+.services-info img {
+    border-radius: 10px;
+    object-fit: cover;
 }

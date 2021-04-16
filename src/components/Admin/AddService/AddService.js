@@ -1,15 +1,58 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
+require('dotenv').config();
+
 const AddService = () => {
+    const [imageURL, setImageURL] = useState(null);
+
+    const handleImageUpload = (event) => {
+        const imageData = new FormData();
+
+        imageData.set('key', `${process.env.REACT_APP_IMAGEBB_KEY}`);
+        imageData.append('image', event.target.files[0]);
+
+        axios
+            .post('https://api.imgbb.com/1/upload', imageData)
+            .then((response) => {
+                setImageURL(response.data.data.display_url);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = (data) => {
+        const serviceData = {
+            title: data.title,
+            imageURL,
+            service: data.service,
+        };
+
+        const url = `http://localhost:5000/addService`;
+
+        console.log(serviceData);
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(serviceData),
+        }).then((res) => {
+            console.log('Response', res);
+            alert('New Services added successfully');
+        });
+    };
+
     return (
         <section>
             <Container fluid>
@@ -26,11 +69,11 @@ const AddService = () => {
                             <div className="form-group">
                                 <input
                                     type="text"
-                                    {...register('name', { required: true })}
+                                    {...register('title', { required: true })}
                                     placeholder="Service Title"
                                     className="form-control"
                                 />
-                                {errors.name && (
+                                {errors.title && (
                                     <span className="text-danger">This field is required</span>
                                 )}
                             </div>
@@ -51,6 +94,7 @@ const AddService = () => {
                                     type="file"
                                     {...register('file', { required: true })}
                                     placeholder="Image"
+                                    onChange={handleImageUpload}
                                 />
                                 <br />
                                 {errors.file && (

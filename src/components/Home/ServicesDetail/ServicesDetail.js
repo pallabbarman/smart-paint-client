@@ -4,13 +4,14 @@ import './ServicesDetail.css';
 
 const ServicesDetail = (props) => {
     const { services } = props;
-    const { description, name } = services;
+    const { title, service, imageURL } = services;
     return (
-        <Col md={4}>
-            <Card className="card">
+        <Col md={4} className="d-flex justify-content-center">
+            <Card className="services-info">
+                <Card.Img variant="top" src={imageURL} />
                 <Card.Body>
-                    <Card.Title className="text-center">{name}</Card.Title>
-                    <Card.Text className="text-justify">{description}</Card.Text>
+                    <Card.Title className="text-center">{title}</Card.Title>
+                    <Card.Text className="text-justify">{service}</Card.Text>
                 </Card.Body>
             </Card>
         </Col>
