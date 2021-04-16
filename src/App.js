@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Book from './components/Customer/Book/Book';
+import Review from './components/Customer/Review/Review';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
@@ -18,12 +20,21 @@ function App() {
                     <Route exact path="/">
                         <Home />
                     </Route>
+                    <Route path="/home">
+                        <Home />
+                    </Route>
                     <PrivateRoute path="/dashboard">
                         <Dashboard />
                     </PrivateRoute>
                     <Route path="/login">
                         <Login />
                     </Route>
+                    <PrivateRoute path="/book">
+                        <Book />
+                    </PrivateRoute>
+                    <PrivateRoute path="/review">
+                        <Review />
+                    </PrivateRoute>
                 </Switch>
             </Router>
         </UserContext.Provider>

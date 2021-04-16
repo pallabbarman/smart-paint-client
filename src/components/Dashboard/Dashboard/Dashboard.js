@@ -6,8 +6,11 @@ const Dashboard = () => (
     <section>
         <Container fluid>
             <Row>
-                <Col md={2}>
+                <Col className="p-0" md={2}>
                     <Sidebar />
+                </Col>
+                <Col md={10} className="mt-5">
+                    <h1 className="text-center">Welcome sir</h1>
                 </Col>
             </Row>
         </Container>
