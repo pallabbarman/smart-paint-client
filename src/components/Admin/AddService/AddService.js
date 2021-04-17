@@ -36,6 +36,7 @@ const AddService = () => {
             title: data.title,
             imageURL,
             service: data.service,
+            amount: data.pay,
         };
 
         const url = `http://localhost:5000/addService`;
@@ -73,6 +74,17 @@ const AddService = () => {
                                     className="form-control"
                                 />
                                 {errors.title && (
+                                    <span className="text-danger">This field is required</span>
+                                )}
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    {...register('pay', { required: true })}
+                                    placeholder="Amount"
+                                    className="form-control"
+                                />
+                                {errors.pay && (
                                     <span className="text-danger">This field is required</span>
                                 )}
                             </div>

@@ -6,8 +6,10 @@
     height: 25rem;
     margin: 20px 0;
     text-decoration: none !important;
+    overflow: hidden;
 }
 .services-info img {
     border-radius: 10px;
     object-fit: cover;
+    height: 200px;
 }

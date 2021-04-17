@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AddAdmin from './components/Admin/AddAdmin/AddAdmin';
 import AddService from './components/Admin/AddService/AddService';
+import OrderList from './components/Admin/OrderList/OrderList';
 import Book from './components/Customer/Book/Book';
 import Review from './components/Customer/Review/Review';
+import ServiceList from './components/Customer/ServiceList/ServiceList';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
@@ -42,6 +44,12 @@ function App() {
                     </PrivateRoute>
                     <PrivateRoute path="/addAdmin">
                         <AddAdmin />
+                    </PrivateRoute>
+                    <PrivateRoute path="/orderList">
+                        <OrderList />
+                    </PrivateRoute>
+                    <PrivateRoute path="/serviceList">
+                        <ServiceList />
                     </PrivateRoute>
                 </Switch>
             </Router>

@@ -30,7 +30,6 @@ const Book = () => {
 
     const onSubmit = (data) => {
         setOrder(data);
-        console.log(data);
     };
 
     const handlePaymentSuccess = (paymentId) => {
@@ -41,6 +40,7 @@ const Book = () => {
             title: addBooking?.title,
             image: addBooking?.imageURL,
             description: addBooking?.service,
+            amount: addBooking?.amount,
             date: new Date(),
         };
 
