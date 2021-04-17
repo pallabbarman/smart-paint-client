@@ -2,6 +2,7 @@ import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../../../images/paint-brush.svg';
 import './Footer.css';
 
@@ -21,9 +22,17 @@ const Footer = () => (
                     </Row>
                 </Col>
                 <Col md={3}>
-                    <h5>About Us</h5>
-                    <h5>About Us</h5>
-                    <h5>About Us</h5>
+                    <div className="footer-element">
+                        <Link to="/dashboard">
+                            <h5>Dashboard</h5>
+                        </Link>
+                        <Link to="/login">
+                            <h5>Login</h5>
+                        </Link>
+                        <Link to="/">
+                            <h5>Services</h5>
+                        </Link>
+                    </div>
                 </Col>
                 <Col md={4}>
                     <ul className="list-unstyled" style={{ fontSize: '20px' }}>

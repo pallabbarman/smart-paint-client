@@ -11,25 +11,25 @@ const featureItems = [
         img: skill,
         name: 'Skills',
         description:
-            ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, aperiam?',
+            ' We have the best skilful worker who will be doing your job perfectly and smoothly.',
     },
     {
         img: experience,
         name: 'Experiences',
         description:
-            ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, aperiam?',
+            ' We produce a higher level of residential and commercial professional painting services.',
     },
     {
         img: quality,
         name: 'Quality',
         description:
-            ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, aperiam?',
+            ' We afford Quality Assurance services that approach each engagement as a partnership.',
     },
     {
         img: guaranties,
         name: 'Guaranties',
         description:
-            ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, aperiam?',
+            ' Our painting services will also guaranty that painting will stay as new always.',
     },
 ];
 

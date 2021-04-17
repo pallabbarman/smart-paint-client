@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row, Spinner, Table } from 'react-bootstrap';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
@@ -37,6 +37,16 @@ const ServiceList = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {
+                                        <div
+                                            className="text-center"
+                                            style={{ marginLeft: '350px' }}
+                                        >
+                                            {services.length === 0 && (
+                                                <Spinner animation="grow" variant="primary" />
+                                            )}
+                                        </div>
+                                    }
                                     {services.map((service) => (
                                         <tr key={service._id}>
                                             <td>{service.name}</td>

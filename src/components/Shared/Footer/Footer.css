@@ -9,3 +9,7 @@
     height: 100px;
     width: 100px;
 }
+.footer-element a {
+    text-decoration: none;
+    color: white;
+}
