@@ -8,3 +8,15 @@
     margin: 20px 0;
     overflow: hidden;
 }
+.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.user-info h4 {
+    padding-left: 10px;
+}
+.feedback {
+    padding: 10px;
+}

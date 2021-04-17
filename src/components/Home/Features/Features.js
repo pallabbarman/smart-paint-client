@@ -41,8 +41,8 @@ const Features = () => (
                     <h1>WHY CHOOSE US</h1>
                     <br />
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam ullam
-                        corporis similique quo officiis maxime nemo ab sapiente nam nostrum.
+                        We always give our best services. Because customers are important to us. We
+                        always want our customer to become happy to get our services.
                     </p>
                 </div>
                 <br />

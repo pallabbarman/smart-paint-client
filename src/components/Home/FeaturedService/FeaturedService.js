@@ -8,7 +8,12 @@ const FeaturedService = () => (
             <Container>
                 <Row>
                     <Col md={6}>
-                        <img className="img-fluid" src={featured} alt="" />
+                        <img
+                            style={{ borderRadius: '10px' }}
+                            className="img-fluid"
+                            src={featured}
+                            alt=""
+                        />
                     </Col>
                     <Col md={6}>
                         <h1>House Painting</h1>
