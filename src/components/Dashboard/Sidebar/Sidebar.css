@@ -8,24 +8,20 @@
     overflow: auto;
     color: white;
 }
-.sidebar h3 {
-    margin-top: 50px;
+.sidebar img {
+    width: 100%;
+    height: 100px;
 }
 .sidebar a {
     display: block;
     color: white;
-    padding:10px 20px;
+    padding: 10px 20px;
     text-decoration: none;
 }
 
 .sidebar a:hover:not(.active) {
     background-color: rgb(93, 85, 138);
 }
-
-/* div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-} */
 
 @media screen and (max-width: 700px) {
     .sidebar {

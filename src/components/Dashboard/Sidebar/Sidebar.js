@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import logo from '../../../images/smart.svg';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -29,7 +30,9 @@ const Sidebar = () => {
 
     return (
         <div className="sidebar">
-            <h3 className="text-center">Smart Paint</h3>
+            <Link to="/">
+                <img src={logo} className="img-fluid" alt="" />
+            </Link>
             <br />
             {!isAdmin && (
                 <div>

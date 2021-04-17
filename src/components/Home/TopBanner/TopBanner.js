@@ -21,7 +21,7 @@ const TopBanner = () => (
                         </span>
                     </h4>
                     <br />
-                    <Button as={Link} to="/dashboard" variant="danger">
+                    <Button className="px-5" as={Link} to="/dashboard" variant="danger">
                         Hire us
                     </Button>
                 </Col>

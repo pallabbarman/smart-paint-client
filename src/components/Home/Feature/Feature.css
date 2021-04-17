@@ -4,6 +4,7 @@
     margin: 0 30px;
     background-color: #fff;
     box-shadow: none !important;
+    border-radius: 10px;
 }
 .items-features img {
     object-fit: contain;

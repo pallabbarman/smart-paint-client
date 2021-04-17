@@ -5,6 +5,7 @@ import contact from '../../../images/contact-us.svg';
 const Contact = () => (
     <section>
         <Container>
+            <h1 className="text-center mt-5">CONTACT US</h1>
             <Row className="d-flex justify-content-center align-items-center mt-5">
                 <Col md={6}>
                     <img className="img-fluid" src={contact} alt="" />
