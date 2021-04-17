@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row, Spinner, Table } from 'react-bootstrap';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
 const OrderList = () => {
@@ -34,6 +34,16 @@ const OrderList = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {
+                                        <div
+                                            className="text-center"
+                                            style={{ marginLeft: '300px' }}
+                                        >
+                                            {ordersList.length === 0 && (
+                                                <Spinner animation="grow" variant="primary" />
+                                            )}
+                                        </div>
+                                    }
                                     {ordersList.map((list) => (
                                         <tr key={list._id}>
                                             <td>{list.name}</td>

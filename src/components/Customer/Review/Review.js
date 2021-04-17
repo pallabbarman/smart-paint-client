@@ -19,6 +19,7 @@ const Review = () => {
                     </Col>
                     <Col md={10} style={{ marginTop: '50px' }}>
                         <h1 className="text-center">Review</h1>
+                        <br />
                         <form
                             onSubmit={handleSubmit(onSubmit)}
                             style={{ margin: '20px 50px', padding: '0 40px' }}

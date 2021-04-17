@@ -17,7 +17,7 @@ const Services = () => {
         <section className="service">
             <h1 className="text-center mt-5">OUR SERVICES</h1>
             <Container>
-                <div className="text-center mt-5" style={{ fontSize: '30px' }}>
+                <div className="text-center mt-5">
                     {servicesData.length === 0 && <Spinner animation="grow" variant="primary" />}
                 </div>
                 <Row>
