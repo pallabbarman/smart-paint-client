@@ -39,7 +39,7 @@ const AddService = () => {
             amount: data.pay,
         };
 
-        const url = `http://localhost:5000/addService`;
+        const url = `https://smart-paint.herokuapp.com/addService`;
 
         fetch(url, {
             method: 'POST',

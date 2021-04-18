@@ -15,7 +15,7 @@ const AddAdmin = () => {
             email: data.email,
         };
 
-        fetch('http://localhost:5000/addAAdmin', {
+        fetch('https://smart-paint.herokuapp.com/addAAdmin', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',

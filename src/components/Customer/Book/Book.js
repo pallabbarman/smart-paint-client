@@ -15,7 +15,7 @@ const Book = () => {
     console.log(setLoggedInUser);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${_id}`)
+        fetch(`https://smart-paint.herokuapp.com/service/${_id}`)
             .then((res) => res.json())
             .then((data) => setBooking(data));
     }, [_id]);
@@ -45,7 +45,7 @@ const Book = () => {
             date: new Date(),
         };
 
-        fetch('http://localhost:5000/addServicesOrder', {
+        fetch('https://smart-paint.herokuapp.com/addServicesOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(servicesDetails),

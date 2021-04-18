@@ -7,7 +7,7 @@ const Services = () => {
     const [servicesData, setServicesData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://smart-paint.herokuapp.com/services')
             .then((res) => res.json())
             .then((data) => setServicesData(data))
             .catch((err) => console.log(err));

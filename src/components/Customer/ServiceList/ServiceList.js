@@ -9,7 +9,7 @@ const ServiceList = () => {
     console.log(setLoggedInUser);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/servicesOrderByEmail?email=${loggedInUser.email}`)
+        fetch(`https://smart-paint.herokuapp.com/servicesOrderByEmail?email=${loggedInUser.email}`)
             .then((res) => res.json())
             .then((data) => setServices(data))
             .catch((err) => console.log(err));

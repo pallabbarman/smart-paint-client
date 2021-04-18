@@ -8,14 +8,14 @@ const ManageReview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://smart-paint.herokuapp.com/reviews')
             .then((res) => res.json())
             .then((data) => setReviews(data))
             .catch((err) => console.log(err));
     }, [reviews]);
 
     const deleteReview = (_id) => {
-        fetch(`http://localhost:5000/deleteReview/${_id}`, {
+        fetch(`https://smart-paint.herokuapp.com/deleteReview/${_id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())

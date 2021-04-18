@@ -18,7 +18,7 @@ const Contact = () => {
             details: data.message,
         };
 
-        fetch('http://localhost:5000/addContact', {
+        fetch('https://smart-paint.herokuapp.com/addContact', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',

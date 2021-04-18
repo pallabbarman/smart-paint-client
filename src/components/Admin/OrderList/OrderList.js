@@ -6,7 +6,7 @@ const OrderList = () => {
     const [ordersList, setOrderList] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesOrder')
+        fetch('https://smart-paint.herokuapp.com/servicesOrder')
             .then((res) => res.json())
             .then((data) => setOrderList(data));
     }, [ordersList]);
@@ -16,7 +16,7 @@ const OrderList = () => {
             status: event.target.value,
             _id,
         };
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://smart-paint.herokuapp.com/update/${_id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateStatus),
@@ -74,7 +74,7 @@ const OrderList = () => {
                                                         }
                                                     >
                                                         <option>{list.status}</option>
-                                                        {/* <option>Pending</option> */}
+                                                        <option>Pending</option>
                                                         <option>On going</option>
                                                         <option>Done</option>
                                                     </Form.Control>

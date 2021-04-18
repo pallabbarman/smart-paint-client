@@ -23,7 +23,7 @@ const Review = () => {
             ceo: data.company,
         };
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://smart-paint.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
