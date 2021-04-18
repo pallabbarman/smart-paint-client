@@ -5,6 +5,7 @@ import {
     faComments,
     faList,
     faPlus,
+    faShoppingCart,
     faTasks,
     faUserShield,
 } from '@fortawesome/free-solid-svg-icons';
@@ -41,8 +42,11 @@ const Sidebar = () => {
             </Link>
             {!isAdmin && (
                 <div>
+                    <Link to="/booking">
+                        <FontAwesomeIcon icon={faShoppingCart} /> Book
+                    </Link>
                     <Link to="/serviceList">
-                        <FontAwesomeIcon icon={faTasks} /> Service List
+                        <FontAwesomeIcon icon={faTasks} /> Booking List
                     </Link>
                     <Link to="/review">
                         <FontAwesomeIcon icon={faCommentAlt} /> Review

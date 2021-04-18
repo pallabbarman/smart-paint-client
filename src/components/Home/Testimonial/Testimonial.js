@@ -15,9 +15,7 @@ const Testimonial = (props) => {
                     <Image src={photo} roundedCircle />
                     <div>
                         <h4>{name}</h4>
-                        <h4>
-                            <h6>{ceo}</h6>
-                        </h4>
+                        <h6 className="text-center">{ceo}</h6>
                     </div>
                 </div>
                 <br />

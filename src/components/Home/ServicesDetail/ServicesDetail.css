@@ -5,9 +5,15 @@
     width: 18rem;
     margin: 20px 0;
     text-decoration: none !important;
+    transition: transform .2s;
 }
 .services-info img {
     border-radius: 10px;
     object-fit: cover;
     height: 200px;
+}
+.services-info:hover {
+    -ms-transform: scale(1.2); 
+    -webkit-transform: scale(1.2); 
+    transform: scale(1.2);
 }

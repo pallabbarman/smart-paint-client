@@ -8,6 +8,7 @@ import ManageReview from './components/Admin/ManageReview/ManageReview';
 import ManageService from './components/Admin/ManageService/ManageService';
 import OrderList from './components/Admin/OrderList/OrderList';
 import Book from './components/Customer/Book/Book';
+import Booking from './components/Customer/Booking/Booking';
 import Review from './components/Customer/Review/Review';
 import ServiceList from './components/Customer/ServiceList/ServiceList';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
@@ -18,7 +19,7 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 
 function App() {
-    const [loggedInUser, setLoggedInUser] = useState({});
+    const [loggedInUser, setLoggedInUser] = useState(false);
     return (
         <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
             <Router>
@@ -58,6 +59,9 @@ function App() {
                     </PrivateRoute>
                     <PrivateRoute path="/manageReviews">
                         <ManageReview />
+                    </PrivateRoute>
+                    <PrivateRoute path="/booking">
+                        <Booking />
                     </PrivateRoute>
                 </Switch>
             </Router>
