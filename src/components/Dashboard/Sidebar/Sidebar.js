@@ -1,6 +1,8 @@
 import {
+    faChartLine,
     faClipboardList,
     faCommentAlt,
+    faComments,
     faList,
     faPlus,
     faTasks,
@@ -34,6 +36,9 @@ const Sidebar = () => {
                 <img src={logo} className="img-fluid" alt="" />
             </Link>
             <br />
+            <Link to="/dashboard">
+                <FontAwesomeIcon icon={faChartLine} /> Dashboard
+            </Link>
             {!isAdmin && (
                 <div>
                     <Link to="/serviceList">
@@ -57,6 +62,9 @@ const Sidebar = () => {
                     </Link>
                     <Link to="/manageServices">
                         <FontAwesomeIcon icon={faClipboardList} /> Manage Services
+                    </Link>
+                    <Link to="/manageReviews">
+                        <FontAwesomeIcon icon={faComments} /> Manage Reviews
                     </Link>
                 </div>
             )}

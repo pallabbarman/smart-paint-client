@@ -4,9 +4,7 @@
     padding: 10px;
     color: #000;
     width: 20rem;
-    height: 25rem;
     margin: 20px 0;
-    overflow: hidden;
 }
 .user-info {
     display: flex;
@@ -19,4 +17,7 @@
 }
 .feedback {
     padding: 10px;
+}
+.star {
+    color: gold;
 }

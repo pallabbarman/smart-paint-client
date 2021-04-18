@@ -3,10 +3,8 @@
     box-shadow: 2px 2px 5px gray;
     color: #000;
     width: 18rem;
-    height: 25rem;
     margin: 20px 0;
     text-decoration: none !important;
-    overflow: hidden;
 }
 .services-info img {
     border-radius: 10px;

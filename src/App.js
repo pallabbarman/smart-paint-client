@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AddAdmin from './components/Admin/AddAdmin/AddAdmin';
 import AddService from './components/Admin/AddService/AddService';
+import ManageReview from './components/Admin/ManageReview/ManageReview';
 import ManageService from './components/Admin/ManageService/ManageService';
 import OrderList from './components/Admin/OrderList/OrderList';
 import Book from './components/Customer/Book/Book';
@@ -54,6 +55,9 @@ function App() {
                     </PrivateRoute>
                     <PrivateRoute path="/manageServices">
                         <ManageService />
+                    </PrivateRoute>
+                    <PrivateRoute path="/manageReviews">
+                        <ManageReview />
                     </PrivateRoute>
                 </Switch>
             </Router>

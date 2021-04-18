@@ -20,6 +20,7 @@ const Review = () => {
             name: data.name,
             service: data.title,
             description: data.description,
+            ceo: data.company,
         };
 
         fetch('http://localhost:5000/addReview', {
@@ -57,6 +58,17 @@ const Review = () => {
                                     className="form-control"
                                 />
                                 {errors.name && (
+                                    <span className="text-danger">This field is required</span>
+                                )}
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    {...register('company', { required: true })}
+                                    placeholder="Company"
+                                    className="form-control"
+                                />
+                                {errors.company && (
                                     <span className="text-danger">This field is required</span>
                                 )}
                             </div>
