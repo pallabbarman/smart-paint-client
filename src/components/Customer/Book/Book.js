@@ -41,6 +41,7 @@ const Book = () => {
             image: addBooking?.imageURL,
             description: addBooking?.service,
             amount: addBooking?.amount,
+            status: 'pending',
             date: new Date(),
         };
 

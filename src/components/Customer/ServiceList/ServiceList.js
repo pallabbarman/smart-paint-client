@@ -23,7 +23,7 @@ const ServiceList = () => {
                         <Sidebar />
                     </Col>
                     <Col md={10} style={{ marginTop: '50px' }}>
-                        <h1 className="text-center">Services List</h1>
+                        <h1 className="text-center">Booking List</h1>
                         <br />
                         <Container>
                             <Table striped bordered hover responsive>
@@ -33,6 +33,7 @@ const ServiceList = () => {
                                         <th>Service Image</th>
                                         <th>Service</th>
                                         <th>Cost</th>
+                                        <th>Date</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
@@ -59,7 +60,10 @@ const ServiceList = () => {
                                             </td>
                                             <td>{service.title}</td>
                                             <td>$ {service.amount}</td>
-                                            <td>pending</td>
+                                            <td>
+                                                {new Date(service.date).toDateString('dd/MM/yyyy')}
+                                            </td>
+                                            <td>{service.status}</td>
                                         </tr>
                                     ))}
                                 </tbody>

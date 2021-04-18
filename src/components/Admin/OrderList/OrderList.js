@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Spinner, Table } from 'react-bootstrap';
+import { Col, Container, Form, Row, Spinner, Table } from 'react-bootstrap';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
 const OrderList = () => {
@@ -9,7 +9,22 @@ const OrderList = () => {
         fetch('http://localhost:5000/servicesOrder')
             .then((res) => res.json())
             .then((data) => setOrderList(data));
-    }, []);
+    }, [ordersList]);
+
+    const handleChange = (_id, event) => {
+        const updateStatus = {
+            status: event.target.value,
+            _id,
+        };
+        fetch(`http://localhost:5000/update/${_id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updateStatus),
+        })
+            .then((result) => result.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
+    };
 
     return (
         <section>
@@ -50,7 +65,21 @@ const OrderList = () => {
                                             <td>{list.email}</td>
                                             <td>{list.title}</td>
                                             <td>Credit Card</td>
-                                            <td>pending</td>
+                                            <td>
+                                                <Form.Group>
+                                                    <Form.Control
+                                                        as="select"
+                                                        onChange={(event) =>
+                                                            handleChange(list._id, event)
+                                                        }
+                                                    >
+                                                        <option>{list.status}</option>
+                                                        {/* <option>Pending</option> */}
+                                                        <option>On going</option>
+                                                        <option>Done</option>
+                                                    </Form.Control>
+                                                </Form.Group>
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
