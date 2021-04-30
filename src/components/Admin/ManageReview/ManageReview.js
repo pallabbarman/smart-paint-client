@@ -34,7 +34,7 @@ const ManageReview = () => {
                         <Sidebar />
                     </Col>
                     <Col md={10} style={{ marginTop: '50px' }}>
-                        <h1 className="text-center">Manage Services</h1>
+                        <h1 className="text-center">Manage Review</h1>
                         <br />
                         <Container>
                             <Table striped bordered hover responsive>
