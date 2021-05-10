@@ -21,4 +21,20 @@ This is a painting servicing system for clients. Where a client can bring their 
 > -   Admin can check all orders.
 > -   Both admin and user need to login for using this system.
 
+### How to run
+
+-   Clone this project
+
+```
+git clone https://github.com/pallabbarman/smart-paint-client.git
+```
+
+-   Then run this command
+
+```
+npm install or yarn
+```
+
+**_If you like this project, please give a start._**
+
 [Live Link](https://web-smart-paint.web.app).
