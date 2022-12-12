@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
 import AddAdmin from './components/Admin/AddAdmin/AddAdmin';
 import AddService from './components/Admin/AddService/AddService';
 import ManageReview from './components/Admin/ManageReview/ManageReview';

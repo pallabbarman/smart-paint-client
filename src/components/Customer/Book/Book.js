@@ -15,7 +15,7 @@ const Book = () => {
     console.log(setLoggedInUser);
 
     useEffect(() => {
-        fetch(`https://smart-paint.herokuapp.com/service/${_id}`)
+        fetch(`https://smart-paint.onrender.com/service/${_id}`)
             .then((res) => res.json())
             .then((data) => setBooking(data));
     }, [_id]);
@@ -45,7 +45,7 @@ const Book = () => {
             date: new Date(),
         };
 
-        fetch('https://smart-paint.herokuapp.com/addServicesOrder', {
+        fetch('https://smart-paint.onrender.com/addServicesOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(servicesDetails),
@@ -63,7 +63,13 @@ const Book = () => {
                     <Col md={2} className="p-0">
                         <Sidebar />
                     </Col>
-                    <Col md={10} style={{ marginTop: '50px', display: order ? 'none' : 'block' }}>
+                    <Col
+                        md={10}
+                        style={{
+                            marginTop: '50px',
+                            display: order ? 'none' : 'block',
+                        }}
+                    >
                         <h1 className="text-center">Booking</h1>
                         <form
                             onSubmit={handleSubmit(onSubmit)}
@@ -107,7 +113,13 @@ const Book = () => {
                             </Button>
                         </form>
                     </Col>
-                    <Col md={10} style={{ marginTop: '50px', display: order ? 'block' : 'none' }}>
+                    <Col
+                        md={10}
+                        style={{
+                            marginTop: '50px',
+                            display: order ? 'block' : 'none',
+                        }}
+                    >
                         <h1 className="text-center">Pay Now</h1>
                         <PaymentForm handlePayment={handlePaymentSuccess} />
                     </Col>

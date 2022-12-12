@@ -39,7 +39,7 @@ const AddService = () => {
             amount: data.pay,
         };
 
-        const url = `https://smart-paint.herokuapp.com/addService`;
+        const url = `https://smart-paint.onrender.com/addService`;
 
         fetch(url, {
             method: 'POST',

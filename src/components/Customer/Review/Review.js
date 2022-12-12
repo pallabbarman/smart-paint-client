@@ -23,7 +23,7 @@ const Review = () => {
             ceo: data.company,
         };
 
-        fetch('https://smart-paint.herokuapp.com/addReview', {
+        fetch('https://smart-paint.onrender.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -86,7 +86,9 @@ const Review = () => {
                             <div className="form-group">
                                 <textarea
                                     type="text"
-                                    {...register('description', { required: true })}
+                                    {...register('description', {
+                                        required: true,
+                                    })}
                                     placeholder="Description"
                                     className="form-control"
                                     rows="4"

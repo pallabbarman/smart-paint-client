@@ -9,7 +9,7 @@ const ServiceList = () => {
     console.log(setLoggedInUser);
 
     useEffect(() => {
-        fetch(`https://smart-paint.herokuapp.com/servicesOrderByEmail?email=${loggedInUser.email}`)
+        fetch(`https://smart-paint.onrender.com/servicesOrderByEmail?email=${loggedInUser.email}`)
             .then((res) => res.json())
             .then((data) => setServices(data))
             .catch((err) => console.log(err));
@@ -54,7 +54,10 @@ const ServiceList = () => {
                                             <td>
                                                 <img
                                                     src={service.image}
-                                                    style={{ objectFit: 'cover', height: '30px' }}
+                                                    style={{
+                                                        objectFit: 'cover',
+                                                        height: '30px',
+                                                    }}
                                                     alt=""
                                                 />
                                             </td>

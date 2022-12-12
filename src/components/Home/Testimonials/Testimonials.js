@@ -6,7 +6,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https://smart-paint.herokuapp.com/reviews')
+        fetch('https://smart-paint.onrender.com/reviews')
             .then((res) => res.json())
             .then((data) => setReviews(data))
             .catch((err) => console.log(err));
